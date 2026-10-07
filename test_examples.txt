@@ -1,0 +1,151 @@
+================================================================================
+SAMPLE RUNS & TEST EXAMPLES: PASSWORD VALIDATOR
+================================================================================
+Program: password_validator.py
+Tested against 5 Valid Passwords and 5 Invalid Passwords (+ Empty Input & Exit)
+
+--------------------------------------------------------------------------------
+1. VALID PASSWORDS TEST
+--------------------------------------------------------------------------------
+
+Test 1:
+Input: Python2026!
+Length: 11 (>= 8)
+Has Uppercase ('P'), Lowercase ('ython'), Digit ('2026'), Special ('!')
+Output:
+Enter password: [SUCCESS] Password is strong and valid!
+
+Test 2:
+Input: Secure#Pass9
+Length: 12 (>= 8)
+Has Uppercase ('S', 'P'), Lowercase ('ecure', 'ass'), Digit ('9'), Special ('#')
+Output:
+Enter password: [SUCCESS] Password is strong and valid!
+
+Test 3:
+Input: Dev@Work2024
+Length: 12 (>= 8)
+Has Uppercase ('D', 'W'), Lowercase ('ev', 'ork'), Digit ('2024'), Special ('@')
+Output:
+Enter password: [SUCCESS] Password is strong and valid!
+
+Test 4:
+Input: C0ding_R0cks!
+Length: 13 (>= 8)
+Has Uppercase ('C', 'R'), Lowercase ('ding', 'cks'), Digit ('0', '0'), Special ('_', '!')
+Output:
+Enter password: [SUCCESS] Password is strong and valid!
+
+Test 5:
+Input: Intern$hip7
+Length: 11 (>= 8)
+Has Uppercase ('I'), Lowercase ('ntern', 'hip'), Digit ('7'), Special ('$')
+Output:
+Enter password: [SUCCESS] Password is strong and valid!
+
+
+--------------------------------------------------------------------------------
+2. INVALID PASSWORDS TEST
+--------------------------------------------------------------------------------
+
+Test 6: Too short and missing uppercase
+Input: short1!
+Length: 6 (< 8)
+Missing: Minimum length, Uppercase letter
+Output:
+Enter password: [FAILED] Password requirements not met:
+  - Must be at least 8 characters long.
+  - Must contain at least one uppercase letter (A-Z).
+
+Test 7: Missing lowercase letter
+Input: PASSWORD123!
+Length: 12 (>= 8)
+Missing: Lowercase letter (a-z)
+Output:
+Enter password: [FAILED] Password requirements not met:
+  - Must contain at least one lowercase letter (a-z).
+
+Test 8: Missing uppercase letter
+Input: password123!
+Length: 12 (>= 8)
+Missing: Uppercase letter (A-Z)
+Output:
+Enter password: [FAILED] Password requirements not met:
+  - Must contain at least one uppercase letter (A-Z).
+
+Test 9: Missing digit
+Input: PasswordSpecial!
+Length: 16 (>= 8)
+Missing: Number (0-9)
+Output:
+Enter password: [FAILED] Password requirements not met:
+  - Must contain at least one number (0-9).
+
+Test 10: Missing special character
+Input: Password1234
+Length: 12 (>= 8)
+Missing: Special character
+Output:
+Enter password: [FAILED] Password requirements not met:
+  - Must contain at least one special character (!@#$%^&* etc.).
+
+
+--------------------------------------------------------------------------------
+3. EDGE CASES (EMPTY INPUT & EXIT COMMAND)
+--------------------------------------------------------------------------------
+
+Test 11: Empty input (user pressed Enter without typing)
+Input: (empty string)
+Output:
+Enter password: [!] Password cannot be empty. Please try again.
+
+Test 12: Exit command
+Input: exit
+Output:
+Enter password: Exiting password validator. Goodbye!
+
+
+--------------------------------------------------------------------------------
+4. FULL CONSOLE SESSION CAPTURE
+--------------------------------------------------------------------------------
+=============================================
+       Simple Password Validator
+=============================================
+Rules for a valid password:
+- At least 8 characters long
+- At least one uppercase letter (A-Z)
+- At least one lowercase letter (a-z)
+- At least one number (0-9)
+- At least one special character (!@#$%^&* etc.)
+Type 'exit' anytime to quit.
+
+Enter password: [SUCCESS] Password is strong and valid!
+
+Enter password: [SUCCESS] Password is strong and valid!
+
+Enter password: [SUCCESS] Password is strong and valid!
+
+Enter password: [SUCCESS] Password is strong and valid!
+
+Enter password: [SUCCESS] Password is strong and valid!
+
+Enter password: [FAILED] Password requirements not met:
+  - Must be at least 8 characters long.
+  - Must contain at least one uppercase letter (A-Z).
+
+Enter password: [FAILED] Password requirements not met:
+  - Must contain at least one lowercase letter (a-z).
+
+Enter password: [FAILED] Password requirements not met:
+  - Must contain at least one uppercase letter (A-Z).
+
+Enter password: [FAILED] Password requirements not met:
+  - Must contain at least one number (0-9).
+
+Enter password: [FAILED] Password requirements not met:
+  - Must contain at least one special character (!@#$%^&* etc.).
+
+Enter password: [!] Password cannot be empty. Please try again.
+
+Enter password: Exiting password validator. Goodbye!
+================================================================================
