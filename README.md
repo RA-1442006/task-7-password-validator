@@ -98,3 +98,14 @@ python -m unittest test_password_validator.py -v
 - `test_password_validator.py` - Automated test suite verifying the rules
 - `test_examples.txt` - Documented sample runs and test console outputs
 - `README.md` - Documentation and project guide
+
+---
+
+## 👤 Author
+
+**M. Rohithanjan**  
+*Python Programming Track Intern*  
+*Veda Technology*  
+- **GitHub**: [RA-1442006](https://github.com/RA-1442006)  
+- **Repository**: [task-7-password-validator](https://github.com/RA-1442006/task-7-password-validator)
+
