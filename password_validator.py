@@ -69,12 +69,13 @@ def main():
     print("- At least one lowercase letter (a-z)")
     print("- At least one number (0-9)")
     print("- At least one special character (!@#$%^&* etc.)")
-    print("Type 'exit' anytime to quit.\n")
+    print("Type 'exit' anytime to quit.")
+    print("(Note: Keystrokes are hidden while typing for privacy. Just type and press Enter!)\n")
 
     # keep asking for passwords until user types exit
     while True:
         try:
-            password = get_password_input("Enter password: ")
+            password = get_password_input("Enter password (hidden): ")
         except (KeyboardInterrupt, EOFError):
             print("\nExiting program.")
             break
