@@ -1,4 +1,3 @@
-import getpass
 import string
 import sys
 
@@ -7,15 +6,8 @@ MIN_LENGTH = 8
 
 
 def get_password_input(prompt="Enter password (or type 'exit' to quit): "):
-    # use getpass when running in interactive terminal so password isn't visible
-    if sys.stdin.isatty():
-        try:
-            return getpass.getpass(prompt)
-        except Exception:
-            return input(prompt)
-    else:
-        # fallback to regular input for automated tests or piped input
-        return input(prompt)
+    # use standard input so the user can see what they type
+    return input(prompt)
 
 
 def check_password(password):
@@ -69,13 +61,12 @@ def main():
     print("- At least one lowercase letter (a-z)")
     print("- At least one number (0-9)")
     print("- At least one special character (!@#$%^&* etc.)")
-    print("Type 'exit' anytime to quit.")
-    print("(Note: Keystrokes are hidden while typing for privacy. Just type and press Enter!)\n")
+    print("Type 'exit' anytime to quit.\n")
 
     # keep asking for passwords until user types exit
     while True:
         try:
-            password = get_password_input("Enter password (hidden): ")
+            password = get_password_input("Enter password: ")
         except (KeyboardInterrupt, EOFError):
             print("\nExiting program.")
             break
